@@ -6,6 +6,7 @@ INPUT_EXIST = {
 }
 
 def write_result(question_number, result)
+  system("touch ./results.json") unless File.exist?("./results.json")
   file = File.open('./results.json')
   hash = JSON.load(file.read)
   file.close
